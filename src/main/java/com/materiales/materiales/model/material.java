@@ -1,6 +1,8 @@
 package com.materiales.materiales.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +29,7 @@ import lombok.NoArgsConstructor;
 public class material {
    
 @Id
-     @Column(name = "id", nullable = false)
+     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private int id;
 
      @Column(name = "name", nullable = false, length= 100)
