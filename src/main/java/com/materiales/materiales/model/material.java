@@ -1,6 +1,9 @@
 package com.materiales.materiales.model;
 
 import jakarta.persistence.Entity;
+
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -24,20 +27,20 @@ import lombok.NoArgsConstructor;
 public class material {
    
 @Id
-     @Column(name = "id", nullable = false , length= 250)
+     @Column(name = "id", nullable = false)
     private int id;
 
-     @Column(name = "name", nullable = false, length= 70)
+     @Column(name = "name", nullable = false, length= 100)
     private String name;
 
-     @Column(name = "condicion", nullable = false , length= 250)
+     @Column(name = "condicion", nullable = false , length= 125)
     private String condition;
 
-     @Column (name = "BorrowDate", nullable = false , length= 250)
-    private String date;
+     @Column (name = "BorrowDate", nullable = false)
+    private LocalDateTime date;
 
-     @Column (name = "ReturnDate", nullable = false , length= 250)
-    private String returndate;
+     @Column (name = "ReturnDate", nullable = false)
+    private LocalDateTime returndate;
 
      @ManyToOne
     @JoinColumn(name = "usuario_id")
